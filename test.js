@@ -7,6 +7,7 @@ test('default options', function(t) {
   t.equal(plugin.ignore, null);
   t.equal(plugin.isRunning, false);
   t.equal(plugin.quiet, false);
+  t.equal(plugin.gracePeriod, 0)
   t.end();
 });
 

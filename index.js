@@ -13,6 +13,7 @@ function LiveReloadPlugin(options) {
   this.protocol = this.options.protocol || 'http';
   this.hostname = this.options.hostname || 'localhost';
   this.server = null;
+  this.gracePeriod = this.options.gracePeriod || 0;
 }
 
 function arraysEqual(a1, a2){
@@ -61,7 +62,7 @@ LiveReloadPlugin.prototype.done = function done(stats) {
     this.lastChildHashes = childHashes;
     setTimeout(function onTimeout() {
       this.server.notifyClients(include);
-    }.bind(this));
+    }.bind(this), this.gracePeriod);
   }
 };
 

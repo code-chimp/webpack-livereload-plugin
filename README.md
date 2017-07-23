@@ -43,6 +43,8 @@ Add a script tag to your page pointed at the livereload server
                    automatically to `<head>`.
 - `ignore` - (Default: `null`) RegExp of files to ignore. Null value means
   ignore nothing.
+- `gracePeriod` - (Default: 0) time in milliseconds to delay notifying the
+  clients (allows time for builds, etc. to complete)
 
 ## Why?
 
